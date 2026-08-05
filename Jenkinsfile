@@ -2,8 +2,8 @@ pipeline{
    agent any
      parameters{
          string(name: "VERSION", defaultValue: "1.0" , description: "varsion to deploy")
-         choice(name: "ENVIRONMENT", choice: ['staging' , 'Production' ] , description: "Target")
-         booleanParam(name: "SKIP_TEST" , defaultValue: false , descriptoin: "SKIP_TEST?")
+         choice(name: "ENVIRONMENT", choices: ['staging' , 'Production' ] , description: "Target")
+         booleanParam(name: "SKIP_TEST" , defaultValue: false , description: "SKIP_TEST?")
      }
     stages {
         stage ('Build'){
