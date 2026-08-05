@@ -9,7 +9,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-            }
+                sh "echo Deploying version ${params.VERSION} to $(params.ENVIRONMENT}"
+                script{ if (params.SKIP_TESTS){ echo 'test skipped by request' } }
+              }
         }
     }
 }
